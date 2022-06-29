@@ -55,7 +55,7 @@ public abstract class CassandraStorageBuilder<B extends CassandraStorageBuilder<
   int poolLocalSize = 8;
   /** @see DefaultDriverOption#CONNECTION_MAX_REQUESTS */
   // Ported from java-driver v3 PoolingOptions.setMaxQueueSize(40960)
-  final int maxRequestsPerConnection = 40960 / poolLocalSize;
+  int maxRequestsPerConnection = 40960 / poolLocalSize;
 
   protected Map<DriverOption, Integer> poolingOptions() {
     Map<DriverOption, Integer> result = new LinkedHashMap<>();
